@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'What is Goalie Interference?',
+  title: 'HockeyVote',
 }
 
 export default function RootLayout({
