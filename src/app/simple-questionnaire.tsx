@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import RadioGroup from './components/radio-group';
+import RadioGroup from '@/components/radio-group';
 
 export default function SimpleQuestionnaire () {
   const [wasGoalieInterference, setWasGoalieInterference] = useState<string | undefined>()
