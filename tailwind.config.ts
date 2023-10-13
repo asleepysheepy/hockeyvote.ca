@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
 
-export default{
+export default {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -22,8 +22,5 @@ export default{
     },
     extend: {},
   },
-  plugins: [
-    require('@headlessui/tailwindcss'),
-    require('@tailwindcss/forms')
-  ],
+  plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/forms')],
 } satisfies Config

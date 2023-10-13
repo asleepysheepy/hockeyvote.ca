@@ -2,14 +2,10 @@ import SimpleQuestionnaire from './simple-questionnaire'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center pt-4 gap-8">
+    <main className="flex min-h-screen flex-col items-center gap-8 pt-4">
       <div className="text-center">
-        <h1 className="text-3xl font-semibold">
-          Craig Smith (BOS) on Marc-André Fluery (CHI)
-        </h1>
-        <p className="mt-2 text-xl">
-          March 15, 2022
-        </p>
+        <h1 className="text-3xl font-semibold">Craig Smith (BOS) on Marc-André Fluery (CHI)</h1>
+        <p className="mt-2 text-xl">March 15, 2022</p>
       </div>
 
       <iframe
