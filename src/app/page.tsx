@@ -1,25 +1,18 @@
-import SimpleQuestionnaire from './simple-questionnaire'
+import Link from 'next/link'
+import prisma from '@/db'
 
-export default function Home() {
+export default async function HomePage() {
+  const incidents = await prisma.incident.findMany()
+
   return (
-    <main className="flex min-h-screen flex-col items-center gap-8 pt-4">
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold">Craig Smith (BOS) on Marc-André Fluery (CHI)</h1>
-        <p className="mt-2 text-xl">March 15, 2022</p>
-      </div>
-
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/EBuRYKcWJPI"
-        title="YouTube video player"
-        allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen
-      />
-
-      <div>
-        <SimpleQuestionnaire />
-      </div>
-    </main>
+    <ul>
+      {incidents.map((incident) => (
+        <li key={incident.id}>
+          <Link href={`/incidents/${incident.id}`}>
+            {`${incident.offendingPlayer} on ${incident.goalie} - ${incident.date.toDateString()}`}
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
