@@ -1,13 +1,12 @@
-import './globals.css'
-import  { type Metadata } from 'next'
+import '@/app/globals.css'
 
-export const metadata: Metadata = {
-  title: 'HockeyVote',
-}
+import { getCurrentLocale } from '@/locales/server'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = getCurrentLocale()
+
   return (
-    <html lang="en" className="h-full">
+    <html lang={locale} className="h-full">
       <body className="h-full bg-white">{children}</body>
     </html>
   )
