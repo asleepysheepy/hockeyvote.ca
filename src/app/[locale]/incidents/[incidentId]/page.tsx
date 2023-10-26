@@ -1,7 +1,10 @@
 import prisma from '@/db'
+import { getCurrentLocale } from '@/locales/server'
+import { formatDate } from '@/utils/formatters'
 import SimpleQuestionnaire from './simple-questionnaire'
 
 export default async function IncidentPage({ params }: { params: { incidentId: string } }) {
+  const locale = getCurrentLocale()
   const incident = await prisma.incident.findFirstOrThrow({
     where: { id: parseInt(params.incidentId) },
   })
@@ -26,7 +29,7 @@ export default async function IncidentPage({ params }: { params: { incidentId: s
           {`${offendingPlayer} (${offendingPlayerTeam}) on ${goalie} (${goalieTeam})`}
         </h1>
         <p className="mt-2 text-xl">
-          {`${date.toDateString()} at ${timeElapsed} in the ${period}`}
+          {`${formatDate(date, locale)} at ${timeElapsed} in the ${period}`}
         </p>
       </div>
 
