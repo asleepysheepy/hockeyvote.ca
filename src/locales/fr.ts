@@ -1,5 +1,6 @@
 export default {
-  hello: 'Hello',
-  'hello.world': 'Hello world!',
-  welcome: 'Hello {name}!',
+  'home.title': 'HockeyVote',
+
+  'navbar.languageOption.en': 'English',
+  'navbar.languageOption.fr': 'Français',
 } as const
