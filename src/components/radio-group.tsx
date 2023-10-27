@@ -1,13 +1,13 @@
 export default function RadioGroup({ legend, name, onChange, options, selected }: RadioGroupProps) {
   return (
     <fieldset>
-      <legend className="text-base font-semibold text-gray-900">{legend}</legend>
+      <legend className="text-base font-semibold">{legend}</legend>
       <div className="ml-4 mt-2 space-y-1">
         {options.map(({ label, value }) => (
           <div className="flex items-center" key={value}>
             <input
               checked={selected === value}
-              className="h-4 w-4 border-gray-300 text-red-600 focus:ring-red-600"
+              className="h-4 w-4 border-gray-300 text-red-600 focus:ring-red-600 dark:border-gray-800"
               id={`${name}-${value}`}
               name={name}
               onChange={(e) => {
@@ -19,7 +19,7 @@ export default function RadioGroup({ legend, name, onChange, options, selected }
             />
             <label
               htmlFor={`${name}-${value}`}
-              className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+              className="ml-3 block text-sm font-medium leading-6"
             >
               {label}
             </label>

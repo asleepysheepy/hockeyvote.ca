@@ -9,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang={locale} className="h-full">
-      <body className="h-full bg-white">
+      <body className="h-full bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-200">
         <div className="min-h-full">
           <I18nProviderClient locale={locale}>
             <Navbar />
